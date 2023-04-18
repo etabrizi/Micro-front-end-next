@@ -5,7 +5,7 @@ const { dependencies } = require('./package.json');
 
 module.exports = {
   entry: './src/index',
-  mode: 'development',
+  mode: 'production',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),

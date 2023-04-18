@@ -9,11 +9,10 @@ module.exports = {
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
-    },
-    port: 3002,
+    }
   },
   output: {
-    publicPath: 'http://localhost:3002/',
+    publicPath: 'https://etabrizi-micro-front-end-shop.netlify.app/',
   },
   module: {
     rules: [

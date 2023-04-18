@@ -13,7 +13,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
+    "start": "webpack serve --config webpack.config.js",
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {

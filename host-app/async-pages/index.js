@@ -3,13 +3,11 @@ import dynamic from 'next/dynamic';
 
 
 const AuthApp = dynamic(() => import('remote/ReactApp'), {
-  ssr: false,
-  suspense: true 
+  ssr: false
 });
 
 const ShopApp = dynamic(() => import('remote2/ReactApp2'), {
-  ssr: false,
-  suspense: true 
+  ssr: false
 });
 
 export default function Home() {

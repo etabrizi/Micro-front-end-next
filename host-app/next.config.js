@@ -7,8 +7,8 @@ module.exports = {
         new NextFederationPlugin({
           name: 'host',
           remotes: {
-            remote: `auth@${'https://etabrizi-micro-front-end-auth.netlify.app/'}/remote.js`,
-            remote2: `shop@${'https://etabrizi-micro-front-end-shop.netlify.app/'}/remote.js`
+            remote: `auth@${process.env.NEXT_AUTH_URL}remote.js`,
+            remote2: `shop@${process.env.NEXT_SHOP_URL}remote.js`
           },
           filename: 'static/chunks/remoteEntry.js',
         }),

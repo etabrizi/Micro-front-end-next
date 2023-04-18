@@ -1,0 +1,16 @@
+{
+  "name": "nextjs-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:apps": "concurrently \"yarn --cwd host-app\" \"yarn --cwd auth\" \"yarn --cwd shop\"",
+    "start": "concurrently \"yarn --cwd auth start\" \"yarn --cwd shop start\" \"yarn --cwd host-app dev\""
+  },
+  "keywords": [],
+  "author": "rahulteja-dev",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

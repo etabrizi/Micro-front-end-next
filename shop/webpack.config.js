@@ -5,15 +5,15 @@ const { dependencies } = require('./package.json');
 
 module.exports = {
   entry: './src/index',
-  mode: 'development',
+  mode: 'production',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3002,
+    port: null,
   },
   output: {
-    publicPath: 'http://localhost:3002/',
+    publicPath: 'https://etabrizi-micro-front-end-shop.netlify.app/',
   },
   module: {
     rules: [

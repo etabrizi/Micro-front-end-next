@@ -5,14 +5,15 @@ const { dependencies } = require('./package.json');
 
 module.exports = {
   entry: './src/index',
-  mode: 'production',
+  mode: process.env.NODE_ENV === "production" ? 'production': 'development',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
-    }
+    },
+    port: process.env.NODE_ENV === "production" ? null : 3001,
   },
   output: {
-    publicPath: 'https://etabrizi-micro-front-end-auth.netlify.app/',
+    publicPath: process.env.NODE_ENV === "production" ? 'https://etabrizi-micro-front-end-auth.netlify.app/' : 'http://localhost:3001/',
   },
   module: {
     rules: [

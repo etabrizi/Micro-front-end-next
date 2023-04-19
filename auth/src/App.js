@@ -2,7 +2,7 @@ import Button from './Button';
 import React from 'react';
 
 const App = () => (
-  <div>This is the auth app
+  <div className="container">This is the react auth app 
     <Button />
   </div>
 );

@@ -2,9 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 const { dependencies } = require('./package.json');
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack.common');
 
-
-module.exports = {
+const prodConfig = {
   entry: './src/index',
   mode: 'production',
   devServer: {
@@ -15,18 +16,6 @@ module.exports = {
   },
   output: {
     publicPath: 'https://etabrizi-micro-front-end-shop.netlify.app/',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-    ],
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -43,3 +32,6 @@ module.exports = {
     }),
   ],  
 };
+
+
+module.exports = merge(commonConfig, prodConfig)

@@ -2,9 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 const { dependencies } = require('./package.json');
+const commonConfig = require('./webpack.common');
+const { merge } = require('webpack-merge');
 
-
-module.exports = {
+const devConfig = {
   entry: './src/index',
   mode: 'development',
   devServer: {
@@ -15,18 +16,6 @@ module.exports = {
   },
   output: {
     publicPath: 'http://localhost:3002/',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-    ],
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -43,3 +32,5 @@ module.exports = {
     }),
   ],  
 };
+
+module.exports = merge(commonConfig, devConfig)

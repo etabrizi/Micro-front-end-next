@@ -1,0 +1,39 @@
+
+.welcome-banner {
+   background-color: #023548;
+   &__container {
+       width: 1060px;
+       margin: 0 auto;
+       padding: 75px 25px 50px 0;
+       box-sizing: border-box;
+   }
+   &__title {
+    font-size: 48px;
+    font-size: 3rem;
+    padding: 0;
+    margin:0;
+    line-height: 1.04167;
+    margin-bottom: 30px;
+    color: #fff;
+   }
+   &__intro {
+    font-size: 22px;
+    line-height: 1.3;
+    color: #fff;
+   }
+   &__content { 
+    font-size: 18px;
+   }
+   @media only screen and (max-width: 1024px) { 
+    &__container {
+        padding: 75px 25px 50px 25px;
+    }
+    &__title {
+        font-size: 30px; 
+    }
+    &__container {
+        width: 100%;
+    }
+   }
+}
+

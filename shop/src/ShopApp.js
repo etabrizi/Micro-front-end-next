@@ -1,8 +1,10 @@
-import Button from './Button';
 import React from 'react';
 
+import './styles.css'
+
 const ShopApp = () => (
-  <div>This is the shop app
+  <div className="contaniner">
+     This is the shop app
   </div>
 );
 

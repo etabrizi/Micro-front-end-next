@@ -1,0 +1,26 @@
+
+.nav {
+   display: flex;
+   justify-content: center;
+   li {
+      display: flex;
+      list-style: none;
+      
+   }
+   &--active {
+      border-bottom: 1px solid green;
+   }
+   a {
+      font-size: 45px;
+      border-right: 2px solid grey;
+      display: block;
+      padding: 10px;
+   }
+   li:last-child a {
+      font-size: 45px;
+      border-right:none;
+      display: block;
+      padding: 10px;
+   }
+}
+

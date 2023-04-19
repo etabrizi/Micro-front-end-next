@@ -1,14 +1,19 @@
 import React from 'react';
-import { WelcomeBanner } from './components/WelcomeBanner'
-
+import { Tabs } from './components/Tabs'
+import Tab from './components/Tabs/Tab'
 
 import './styles.scss'
 
 const ShopApp = () => (
   <div className="contaniner">
-     This is the shop app
-     <WelcomeBanner title="TEST"/>
-      
+     <Tabs>
+        <Tab title='Shop view 1'>
+         This is tab for the shop
+        </Tab>
+        <Tab title='Shop view 2'>
+        Here is another 1
+        </Tab>
+      </Tabs>
   </div>
 );
 

@@ -1,4 +1,4 @@
-import Button from '../components/Button';
+import { Navigation } from '../components/Navigation';
 import dynamic from 'next/dynamic';
 
 import { WelcomeBanner } from '../components/WelcomeBanner'
@@ -14,7 +14,9 @@ export default function Auth() {
     <div>
       <Layout>
       <WelcomeBanner title="HOST APP" intro="Application example" />
+      <Navigation active='auth' />
       <h1>Auth Application</h1>
+      <a href="/">back</a>
       <AuthApp />
       </Layout>
     </div>

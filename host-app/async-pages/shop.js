@@ -1,4 +1,4 @@
-import Button from '../components/Button';
+import { Navigation } from '../components/Navigation';
 import dynamic from 'next/dynamic';
 
 import { WelcomeBanner } from '../components/WelcomeBanner'
@@ -14,6 +14,8 @@ export default function Shop() {
     <div>
       <Layout>
       <WelcomeBanner title="HOST APP" intro="Application example" />
+       <Navigation active='shop' />
+       <a href="/">back</a>
        <h1>SHOP Application</h1>
        <ShopApp />
       </Layout>

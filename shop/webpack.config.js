@@ -4,6 +4,7 @@ const path = require('path');
 const { dependencies } = require('./package.json');
 const commonConfig = require('./webpack.common');
 const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const devConfig = {
   entry: './src/index',
@@ -30,6 +31,9 @@ const devConfig = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css"
+    })
   ],  
 };
 

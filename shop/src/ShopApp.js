@@ -1,10 +1,14 @@
 import React from 'react';
+import { WelcomeBanner } from './components/WelcomeBanner'
 
-import './styles.css'
+
+import './styles.scss'
 
 const ShopApp = () => (
   <div className="contaniner">
      This is the shop app
+     <WelcomeBanner title="TEST"/>
+      
   </div>
 );
 

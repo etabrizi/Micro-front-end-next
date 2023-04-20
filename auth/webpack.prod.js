@@ -2,8 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 const { dependencies } = require('./package.json');
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack.common');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require('dotenv-webpack');
 
-module.exports = {
+const prodConfig = {
   entry: './src/index',
   mode: 'production',
   devServer: {
@@ -13,24 +17,12 @@ module.exports = {
     port: null,
   },
   output: {
-    publicPath: 'https://etabrizi-micro-front-end-auth.netlify.app/',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-    ],
+    publicPath: process.env.PUBLIC_AUTH_PATH,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'auth',
-      library: { type: 'var', name: 'auth' },
+      name: 'shop',
+      library: { type: 'var', name: 'shop' },
       filename: 'remote.js',
       exposes: {
         './ReactApp': './src/App',
@@ -40,6 +32,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-  ],
+    new MiniCssExtractPlugin({
+      filename:"[name]-[contenthash].css"
+    }),
+    new Dotenv()
+  ],  
 };
 
+
+module.exports = merge(commonConfig, prodConfig)

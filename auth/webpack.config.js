@@ -2,8 +2,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 const { dependencies } = require('./package.json');
+const commonConfig = require('./webpack.common');
+const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require('dotenv-webpack');
 
-module.exports = {
+const devConfig = {
   entry: './src/index',
   mode: 'development',
   devServer: {
@@ -15,21 +19,9 @@ module.exports = {
   output: {
     publicPath: 'http://localhost:3001/',
   },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react'],
-        },
-      },
-    ],
-  },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'auth',
+      name: 'shop',
       library: { type: 'var', name: 'auth' },
       filename: 'remote.js',
       exposes: {
@@ -40,6 +32,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-  ],
+    new MiniCssExtractPlugin({
+      filename: "[name].css"
+    }),
+    new Dotenv()
+  ],  
 };
 
+module.exports = merge(commonConfig, devConfig)

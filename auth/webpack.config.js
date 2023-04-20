@@ -21,7 +21,7 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shop',
+      name: 'auth',
       library: { type: 'var', name: 'auth' },
       filename: 'remote.js',
       exposes: {

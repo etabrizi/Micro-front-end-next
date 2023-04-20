@@ -1,7 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Button = () => {
-  return <button>Remote Button 2</button>;
+
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <>
+      {counter}
+      <button onClick={() => {setCounter(counter + 1)}}>Click to add value</button>
+    </>
+  )
 };
 
 export default Button;

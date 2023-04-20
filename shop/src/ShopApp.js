@@ -1,14 +1,18 @@
-import React from 'react';
-import { Tabs } from './components/Tabs'
-import Tab from './components/Tabs/Tab'
+import React, {useState} from 'react';
+import { Tabs } from './components/Tabs';
+import Tab from './components/Tabs/Tab';
+import Button from './Button';
 
 import './styles.scss'
 
 const ShopApp = () => (
+
   <div className="contaniner">
+    
+    <Button />
      <Tabs>
         <Tab title='Shop view 1'>
-         This is tab for the shop
+        {process.env.MODE}
         </Tab>
         <Tab title='Shop view 2'>
         Here is another 1

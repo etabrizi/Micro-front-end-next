@@ -5,6 +5,7 @@ const { dependencies } = require('./package.json');
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require('dotenv-webpack');
 
 const prodConfig = {
   entry: './src/index',
@@ -16,7 +17,7 @@ const prodConfig = {
     port: null,
   },
   output: {
-    publicPath: 'https://etabrizi-micro-front-end-shop.netlify.app/',
+    publicPath: process.env.PUBLIC_SHOP_PATH,
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -33,7 +34,8 @@ const prodConfig = {
     }),
     new MiniCssExtractPlugin({
       filename:"[name]-[contenthash].css"
-    })
+    }),
+    new Dotenv()
   ],  
 };
 

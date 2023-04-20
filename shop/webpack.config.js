@@ -5,6 +5,7 @@ const { dependencies } = require('./package.json');
 const commonConfig = require('./webpack.common');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require('dotenv-webpack');
 
 const devConfig = {
   entry: './src/index',
@@ -33,7 +34,8 @@ const devConfig = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
-    })
+    }),
+    new Dotenv()
   ],  
 };
 

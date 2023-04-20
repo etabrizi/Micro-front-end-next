@@ -1,8 +1,9 @@
 import { Navigation } from '../components/Navigation';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
-import { WelcomeBanner } from '../components/WelcomeBanner'
-import { Layout } from '../components/Layout'
+import { WelcomeBanner } from '../components/WelcomeBanner';
+import { Layout } from '../components/Layout';
 
 
 const ShopApp = dynamic(() => import('remote2/ReactApp2'), {
@@ -15,8 +16,8 @@ export default function Shop() {
       <Layout>
       <WelcomeBanner title="HOST APP" intro="Application example" />
        <Navigation active='shop' />
-       <a href="/">back</a>
-       <h1>SHOP Application</h1>
+       <Link href="/">back</Link>
+       <h1>Shop Application</h1>
        <ShopApp />
       </Layout>
     </div>

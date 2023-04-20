@@ -8,14 +8,13 @@ import './styles.scss'
 const ShopApp = () => (
 
   <div className="contaniner">
-    
     <Button />
      <Tabs>
         <Tab title='Shop view 1'>
-        {process.env.MODE}
+       Here is tab 1
         </Tab>
         <Tab title='Shop view 2'>
-        Here is another 1
+        Here is tab 2
         </Tab>
       </Tabs>
   </div>

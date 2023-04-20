@@ -1,8 +1,8 @@
 import { Navigation } from '../components/Navigation';
 import dynamic from 'next/dynamic';
-
-import { WelcomeBanner } from '../components/WelcomeBanner'
-import { Layout } from '../components/Layout'
+import Link from 'next/link';
+import { WelcomeBanner } from '../components/WelcomeBanner';
+import { Layout } from '../components/Layout';
 
 
 const AuthApp = dynamic(() => import('remote/ReactApp'), {
@@ -15,8 +15,8 @@ export default function Auth() {
       <Layout>
       <WelcomeBanner title="HOST APP" intro="Application example" />
       <Navigation active='auth' />
+      <Link href="/">back</Link>
       <h1>Auth Application</h1>
-      <a href="/">back</a>
       <AuthApp />
       </Layout>
     </div>

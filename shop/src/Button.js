@@ -6,8 +6,8 @@ const Button = () => {
 
   return (
     <>
-      {counter}
-      <button onClick={() => {setCounter(counter + 1)}}>Click to add value</button>
+      <p className="counter">{counter}</p>
+      <button className="m--b-xl" onClick={() => {setCounter(counter + 1)}}>Click to add value</button>
     </>
   )
 };

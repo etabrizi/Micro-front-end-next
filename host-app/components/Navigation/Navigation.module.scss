@@ -2,25 +2,24 @@
 .nav {
    display: flex;
    justify-content: center;
+   border-bottom: 1px solid grey;
+   height: 50px;
    li {
       display: flex;
       list-style: none;
       
    }
    &--active {
-      border-bottom: 1px solid green;
+      border-bottom: 2px solid grey;
    }
    a {
-      font-size: 45px;
-      border-right: 2px solid grey;
+      font-size: 20px;
       display: block;
-      padding: 10px;
+      padding: 5px;
+      text-decoration: none;
    }
    li:last-child a {
-      font-size: 45px;
       border-right:none;
-      display: block;
-      padding: 10px;
    }
 }
 

@@ -21,8 +21,8 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'shop',
-      library: { type: 'var', name: 'shop' },
+      name: 'auth',
+      library: { type: 'var', name: 'auth' },
       filename: 'remote.js',
       exposes: {
         './ReactApp': './src/App',

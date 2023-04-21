@@ -16,6 +16,10 @@ There are 3 applications:
 - run `npm run install:apps` - Install all the required dependencies on both `host-app`, `auth-app` and `shop-app`
 - run `npm run start` - Start both `host-app`,  `auth-app` and `shop-app`
 - `host-app` on `localhost:3000`
-- `remote-app` on `localhost:3001`
+- `auth-app` on `localhost:3001`
+- `shop-app` on `localhost:3002`
 - Navigate to `localhost:3000` - Two Button Component should be visible, one from remote and another from host app.
 
+Warning - don't delete lock files. 
+
+Use enivronment varibles to set up your production urls.

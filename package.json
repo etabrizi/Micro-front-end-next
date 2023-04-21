@@ -9,7 +9,7 @@
     "build": "concurrently  \"yarn --cwd host-app build\""
   },
   "keywords": [],
-  "author": "rahulteja-dev",
+  "author": "etabrizi",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^7.6.0"

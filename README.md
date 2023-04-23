@@ -12,14 +12,13 @@ There are 3 applications:
 
 ## Setup
 
-- run `yarn` - Install all the dependencies to run the apps in parallel.
+- run `npm install` - Install all the concurrently dependencies to run the apps in parallel.
 - run `npm run install:apps` - Install all the required dependencies on both `host-app`, `auth-app` and `shop-app`
 - run `npm run start` - Start both `host-app`,  `auth-app` and `shop-app`
 - `host-app` on `localhost:3000`
 - `auth-app` on `localhost:3001`
 - `shop-app` on `localhost:3002`
+
 - Navigate to `localhost:3000` - Two Button Component should be visible, one from remote and another from host app.
 
-Warning - don't delete lock files. 
-
-Use enivronment varibles to set up your production urls.
+Use environment varibles to set up your production urls.

@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install:apps": "concurrently \"yarn --cwd host-app\" \"yarn --cwd auth\" \"yarn --cwd shop\"",
-    "start": "concurrently \"yarn --cwd auth start\" \"yarn --cwd shop start\" \"yarn --cwd host-app dev\"",
-    "build": "concurrently  \"yarn --cwd host-app build\""
+    "install:apps": "concurrently \"npm i --prefix host-app\" \"npm i --prefix auth\" \"npm i --prefix shop\"",
+    "start": "concurrently \"npm --prefix auth start\" \"npm --prefix shop start\" \"npm --prefix host-app run dev\"",
+    "build": "concurrently  \"npm --prefix host-app build\""
   },
   "keywords": [],
   "author": "etabrizi",
